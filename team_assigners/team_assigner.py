@@ -11,6 +11,7 @@ class TeamAssigner:
         self.frame_counter = 0
         self.refresh_interval = refresh_interval
         self.kmeans_team = None
+        self.goalkeeper_ids =  {99: 1, 114: 1, 129:1, }  # Example goalkeeper track IDs for team assignment
 
     # --------------------------------------------------
     # PLAYER COLOR EXTRACTION (BGR)
@@ -97,8 +98,14 @@ class TeamAssigner:
         if track_id in self.player_team_dict:
             return self.player_team_dict[track_id]
 
-        color = self.player_color_cache.get(track_id)
+        # --- BRUTE FORCE GOALKEEPER OVERRIDE ---
+        if track_id in self.goalkeeper_ids:
+            team_id = self.goalkeeper_ids[track_id]
+            self.player_team_dict[track_id] = team_id
+            return team_id
 
+
+        color = self.player_color_cache.get(track_id)
         if color is None or self.frame_counter % self.refresh_interval == 0:
             color = self.get_player_color(frame, player_data["bbox"])
             if color is None:

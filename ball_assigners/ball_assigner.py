@@ -18,8 +18,8 @@ class BallAssigner:
 
         # Use first detected ball
         _, ball_data = next(iter(ball_tracks.items()))
-        ball_center = feet_anchor(ball_data["bbox"])
-
+        
+        ball_center = bbox_center(ball_data["bbox"]) 
         min_dist = float("inf")
         assigned_player = None
 
@@ -36,3 +36,8 @@ class BallAssigner:
             
 
         return assigned_player
+
+
+def bbox_center(bbox):
+    x1, y1, x2, y2 = bbox
+    return ((x1 + x2) / 2, (y1 + y2) / 2)
