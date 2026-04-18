@@ -120,8 +120,6 @@ def main():
     tracks = apply_camera_compensation(tracks, camera_movements)
     logging.info("Applied camera compensation to tracks")
 
-    print(tracks["players"][0])
-
     # -----------------------------
     # Perspective Transformation
     # -----------------------------
@@ -157,7 +155,7 @@ def main():
                 player_data["transformed_position"] = None
 
         # Ball possession
-        tracker.update_ball_possession(tracks, frame_idx)
+        # tracker.update_ball_possession(tracks, frame_idx)
 
         if frame_idx % 50 == 0:
             logging.info(f"Processed frame {frame_idx}/{len(frames)}")

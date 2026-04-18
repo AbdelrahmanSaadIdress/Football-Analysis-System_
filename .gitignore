@@ -1,3 +1,4 @@
-improvements.txt
 yolo_models
-runs
+runs/detect
+runs/backups
+

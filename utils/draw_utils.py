@@ -8,7 +8,7 @@ import cv2
 
 PLAYER_FALLBACK_COLOR = (60, 60, 220)
 REFEREE_COLOR         = (30, 30, 30)
-TEXT_COLOR            = (255, 255, 255)
+TEXT_COLOR            = (0, 0, 0)
 FONT                  = cv2.FONT_HERSHEY_DUPLEX
 
 BALL_RING_OUTER  = (40,  40, 255)
