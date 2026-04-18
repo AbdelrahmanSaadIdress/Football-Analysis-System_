@@ -11,7 +11,7 @@ Detects players, referees, and the ball · assigns teams by jersey colour · tra
 https://github.com/user-attachments/assets/06dbe34d-b1f8-452f-8d28-d2fb40832787
 <!-- ════════════════  OUTPUT VIDEO  ════════════════ -->
 ### Output
-https://github.com/user-attachments/assets/e76b15b6-0e19-4f17-b515-339963183776
+https://github.com/user-attachments/assets/0cf0d32a-d0d1-438a-8322-3bb26ab9261c
 </div>
 
 ---
